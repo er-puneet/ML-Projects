@@ -18,7 +18,7 @@ X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 8].values
 
 
-#Encode Categotical data.
+#Encode Categotical data
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 labelEncode_X = LabelEncoder()
 X[: , 0] = labelEncode_X.fit_transform(X[:, 0])
