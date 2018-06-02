@@ -10,7 +10,7 @@ import pandas as pd
 from sklearn import tree
 from sklearn.preprocessing import StandardScaler
 
-filename = r'C:\Users\c_pujain\Desktop\abalone.data'
+filename = r'C:\Workspace\ML\ML-Projects\Abalone\abalone.data'
 
 # Importing the dataset
 dataset = pd.read_csv(filename)
@@ -18,7 +18,7 @@ X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 8].values
 
 
-#Encode Categotical data
+#Encode Categorical data
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 labelEncode_X = LabelEncoder()
 X[: , 0] = labelEncode_X.fit_transform(X[:, 0])
@@ -34,8 +34,8 @@ from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
-sc_y = StandardScaler()
-y_train = sc_y.fit_transform(y_train[1:])
+#sc_y = StandardScaler()
+#y_train = sc_y.fit_transform(y_train)
 
 clf = tree.DecisionTreeClassifier()
 
